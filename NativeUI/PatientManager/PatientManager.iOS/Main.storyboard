@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="12">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="2">
+            <objects>
+                <tableViewController id="3" sceneMemberID="viewController" customClass="PatientsViewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8" rowHeight="44" reuseIdentifier="DataSourceCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8" id="9">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue id="1375" destination="21" kind="show" identifier="showDetail"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3" id="6"/>
+                            <outlet property="delegate" destination="3" id="7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429" y="75"/>
+        </scene>
+        <scene sceneID="11">
+            <objects>
+                <navigationController id="12" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="14">
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3" kind="relationship" relationship="rootViewController" id="13"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-371" y="52"/>
+        </scene>
+        <scene sceneID="20">
+            <objects>
+                <viewController id="21" sceneMemberID="viewController" customClass="AddPatientViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="18"/>
+                        <viewControllerLayoutGuide type="bottom" id="19"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1381" translatesAutoresizingMaskIntoConstraints="NO" placeholder="First Name">
+                                <rect key="frame" x="194" y="161" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1407" firstItem="1381" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1384" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Last Name">
+                                <rect key="frame" x="194" y="199" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1410" firstItem="1384" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1385" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Height">
+                                <rect key="frame" x="194" y="237" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1411" firstItem="1385" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1386" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Weight">
+                                <rect key="frame" x="194" y="275" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1412" firstItem="1386" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1387" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Blood Pressure">
+                                <rect key="frame" x="194" y="313" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1413" firstItem="1387" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1388" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="194" y="397" width="213" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.12156862745098039" green="0.48627450980392156" blue="1" alpha="1"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="1414" firstItem="1388" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1439" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Blood Type">
+                                <rect key="frame" x="194" y="351" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1440" firstItem="1439" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1421" firstItem="1381" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1422" firstItem="1384" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1423" firstItem="1385" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1424" firstItem="1386" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1425" firstItem="1387" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1426" firstItem="1388" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1427" firstItem="1381" firstAttribute="top" secondItem="18" secondAttribute="bottom" constant="97"/>
+                            <constraint id="1428" firstItem="1384" firstAttribute="top" secondItem="1381" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1429" firstItem="1385" firstAttribute="top" secondItem="1384" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1430" firstItem="1386" firstAttribute="top" secondItem="1385" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1431" firstItem="1387" firstAttribute="top" secondItem="1386" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1444" firstItem="1439" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1445" firstItem="1439" firstAttribute="top" secondItem="1387" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1446" firstItem="1388" firstAttribute="top" secondItem="1439" secondAttribute="bottom" constant="16"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtFirstName" destination="1381" id="name-outlet-1381"/>
+                        <outlet property="txtLastName" destination="1384" id="name-outlet-1384"/>
+                        <outlet property="txtHeight" destination="1385" id="name-outlet-1385"/>
+                        <outlet property="txtWeight" destination="1386" id="name-outlet-1386"/>
+                        <outlet property="txtBloodPressure" destination="1387" id="name-outlet-1387"/>
+                        <outlet property="btnSave" destination="1388" id="name-outlet-1388"/>
+                        <outlet property="txtBloodType" destination="1439" id="name-outlet-1439"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="84"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_add_white_48dp.png" width="24" height="24"/>
+    </resources>
+</document>
