@@ -26,7 +26,12 @@ namespace PatientManager.iOS
 			if (IsViewLoaded && _patient != null)
 			{
 				//Step 1: Apply values from existing patient to fields
-
+				txtFirstName.Text = _patient.FirstName;
+				txtLastName.Text = _patient.LastName;
+				txtHeight.Text = _patient.Height;
+				txtWeight.Text = _patient.Weight;
+				txtBloodPressure.Text = _patient.BloodPressure;
+				txtBloodType.Text = _patient.BloodType;
 			}
 		}
 
@@ -42,8 +47,26 @@ namespace PatientManager.iOS
 			ConfigureView();
 
 			//Step 4: (Optional) Apply ResignFirstResponder to fields
+            txtFirstName.EditingDidEnd += HandleEditingDidEnd;
+			txtFirstName.Delegate = new CatchEnterDelegate();
+
+			txtLastName.EditingDidEnd += HandleEditingDidEnd;
+			txtLastName.Delegate = new CatchEnterDelegate();
+
+			txtHeight.EditingDidEnd += HandleEditingDidEnd;
+			txtHeight.Delegate = new CatchEnterDelegate();
+
+			txtWeight.EditingDidEnd += HandleEditingDidEnd;
+			txtWeight.Delegate = new CatchEnterDelegate();
+
+			txtBloodPressure.EditingDidEnd += HandleEditingDidEnd;
+			txtBloodPressure.Delegate = new CatchEnterDelegate();
+
+			txtBloodType.EditingDidEnd += HandleEditingDidEnd;
+			txtBloodType.Delegate = new CatchEnterDelegate();
 
 			//Step 3: Apply "Save" behavior to btnSave
+            btnSave.TouchUpInside += BtnSave_TouchUpInside;
         }
 
         private async void BtnSave_TouchUpInside(object sender, EventArgs e)
@@ -52,7 +75,12 @@ namespace PatientManager.iOS
 				_patient = new Patient();
 
 			//Step 1: Get values form user input to save to service
-
+			_patient.FirstName = txtFirstName.Text;
+			_patient.LastName = txtLastName.Text;
+			_patient.Height = txtHeight.Text;
+			_patient.Weight = txtWeight.Text;
+			_patient.BloodPressure = txtBloodPressure.Text;
+			_patient.BloodType = txtBloodType.Text;
 
 			var table = await AppDelegate.CloudService.GetTableAsync<Patient>();
 

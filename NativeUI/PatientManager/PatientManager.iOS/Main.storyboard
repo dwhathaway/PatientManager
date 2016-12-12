@@ -19,7 +19,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections/>
+                                <connections>
+                                    <segue id="1375" destination="21" kind="show" identifier="showDetail"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,6 +49,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-371" y="52"/>
+        </scene>
+        <scene sceneID="20">
+            <objects>
+                <viewController id="21" sceneMemberID="viewController" customClass="AddPatientViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="18"/>
+                        <viewControllerLayoutGuide type="bottom" id="19"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1381" translatesAutoresizingMaskIntoConstraints="NO" placeholder="First Name">
+                                <rect key="frame" x="194" y="161" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1407" firstItem="1381" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1384" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Last Name">
+                                <rect key="frame" x="194" y="199" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1410" firstItem="1384" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1385" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Height">
+                                <rect key="frame" x="194" y="237" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1411" firstItem="1385" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1386" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Weight">
+                                <rect key="frame" x="194" y="275" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1412" firstItem="1386" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1387" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Blood Pressure">
+                                <rect key="frame" x="194" y="313" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1413" firstItem="1387" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1388" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="194" y="397" width="213" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.12156862745098039" green="0.48627450980392156" blue="1" alpha="1"/>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="1414" firstItem="1388" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1439" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Blood Type">
+                                <rect key="frame" x="194" y="351" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1440" firstItem="1439" firstAttribute="width" constant="213"/>
+                                </constraints>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1421" firstItem="1381" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1422" firstItem="1384" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1423" firstItem="1385" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1424" firstItem="1386" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1425" firstItem="1387" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1426" firstItem="1388" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1427" firstItem="1381" firstAttribute="top" secondItem="18" secondAttribute="bottom" constant="97"/>
+                            <constraint id="1428" firstItem="1384" firstAttribute="top" secondItem="1381" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1429" firstItem="1385" firstAttribute="top" secondItem="1384" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1430" firstItem="1386" firstAttribute="top" secondItem="1385" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1431" firstItem="1387" firstAttribute="top" secondItem="1386" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1444" firstItem="1439" firstAttribute="centerX" secondItem="22" secondAttribute="centerX"/>
+                            <constraint id="1445" firstItem="1439" firstAttribute="top" secondItem="1387" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1446" firstItem="1388" firstAttribute="top" secondItem="1439" secondAttribute="bottom" constant="16"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtFirstName" destination="1381" id="name-outlet-1381"/>
+                        <outlet property="txtLastName" destination="1384" id="name-outlet-1384"/>
+                        <outlet property="txtHeight" destination="1385" id="name-outlet-1385"/>
+                        <outlet property="txtWeight" destination="1386" id="name-outlet-1386"/>
+                        <outlet property="txtBloodPressure" destination="1387" id="name-outlet-1387"/>
+                        <outlet property="btnSave" destination="1388" id="name-outlet-1388"/>
+                        <outlet property="txtBloodType" destination="1439" id="name-outlet-1439"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="84"/>
         </scene>
     </scenes>
     <resources>

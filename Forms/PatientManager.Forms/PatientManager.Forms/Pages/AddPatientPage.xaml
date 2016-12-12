@@ -2,4 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PatientManager.Forms.Pages.AddPatientPage">
+	<!-- Step 1: Create Add/Edit layout for patient details -->
+  	<StackLayout Padding="25">
+		<Entry x:Name="firstName" Text="{Binding Patient.FirstName, Mode=TwoWay}" Placeholder="First Name" />
+		<Entry x:Name="lastName" Text="{Binding Patient.LastName, Mode=TwoWay}" Placeholder="Last Name" />
+		<Entry x:Name="height" Text="{Binding Patient.Height, Mode=TwoWay}" Placeholder="Height" />
+		<Entry x:Name="weight" Text="{Binding Patient.Weight, Mode=TwoWay}" Placeholder="Weight" />
+		<Entry x:Name="bloodPressure" Text="{Binding Patient.BloodPressure, Mode=TwoWay}" Placeholder="Blood Pressure" />
+		<Entry x:Name="bloodType" Text="{Binding Patient.BloodType, Mode=TwoWay}" Placeholder="Blood Type" />
+		<Button x:Name="savePatient" Text="Save" Command="{Binding SavePatientCommand}" />
+	</StackLayout>
 </ContentPage>

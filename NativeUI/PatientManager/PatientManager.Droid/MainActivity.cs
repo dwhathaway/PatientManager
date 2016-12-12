@@ -22,6 +22,7 @@ namespace PatientManager.Droid
 	public class MainActivity : ActionBarActivity
     {
         ListView _patientsListView;
+        AzureCloudService _patientService;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -73,12 +74,67 @@ namespace PatientManager.Droid
 		}
 
         async void refreshData()
-        {
+		{
 			//Step 2: Refresh Data method
+            SQLitePCL.Batteries.Init();
+
+            var path = "syncstore.db";
+
+            path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), path);
+
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+            }
+
+            _patientService = new AzureCloudService(); //path
+
+			var table = await _patientService.GetTableAsync<Patient>();
+			IEnumerable<Patient> patients = await table.ReadAllItemsAsync();
+
+            var patientsAdapter = new PatientsAdapter(this, patients.ToList<Patient>());
+
+            _patientsListView.Adapter = patientsAdapter;
+            patientsAdapter.NotifyDataSetChanged();
         }
 	}
 
 	//Step 1: Create Patients Adapter
+    public class PatientsAdapter : BaseAdapter<Patient>
+    {
+        List<Patient> items;
+        Activity context;
+
+        public PatientsAdapter(Activity context, List<Patient> items) : base()
+        {
+            this.context = context;
+            this.items = items;
+        }
+
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
+
+        public override Patient this[int position]
+        {
+            get { return items[position]; }
+        }
+
+        public override int Count
+        {
+            get { return items.Count; }
+        }
+
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            View view = convertView; // re-use an existing view, if one is available
+            if (view == null) // otherwise create a new one
+                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position].FullName.ToString();
+            return view;
+        }
+    }
 }
 
 
